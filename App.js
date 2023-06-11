@@ -54,7 +54,7 @@ export default function App() {
       style={styles.rootScreen}
       colors={[Colors.primary900, Colors.accent500]}
     >
-      <StatusBar />
+      <StatusBar style='auto' />
       <ImageBackground
         source={require('./assets/images/background.png')}
         resizeMode='cover'
