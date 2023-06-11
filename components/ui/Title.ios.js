@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, Platform } from 'react-native'
 import Colors from '../../constants/colors'
 
 const Title = ({text}) => {
@@ -20,11 +20,14 @@ const styles = StyleSheet.create({
         // fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
-        borderWidth: 2,
+        //* borderWidth: Platform.OS === 'ios' ? 0 : 2, // This can be one of the possible approach of seeting styles
+        //* borderWidth: Platform.select({ ios: 0, android: 2}), // This is an approach that will apply only for IOS devices
+        borderWidth: 0,
         borderColor: Colors.accent500,
         padding: 10,
         borderRadius: 5,
-        marginBottom: 5
+        marginBottom: 5,
+        maxWidth: '80%'
     }
 })
 
